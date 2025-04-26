@@ -1,0 +1,346 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #7f5539;
+  color: #fefae0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent), 
+                    linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent);
+  background-attachment: fixed;
+  background-size: 100% 30%, 100% 30%; 
+}
+
+.main-content {
+  flex: 1;
+  padding: 0 20px;
+  z-index: 1;
+}
+
+.fade-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.fade-wrapper::before,
+.fade-wrapper::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100px; 
+  z-index: 2;
+  pointer-events: none;
+}
+
+.fade-wrapper::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(127, 85, 57, 0.5), rgba(127, 85, 57, 0));
+}
+
+.fade-wrapper::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(127, 85, 57, 0.5), rgba(127, 85, 57, 0));
+}
+
+nav {
+  width: 200px;
+  background-color: #1a1a1a; 
+  padding: 30px 15px;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  border-right: 2px solid #2e2e2e;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  margin-bottom: 20px;
+}
+
+nav ul li a {
+  color: #cad2c5; 
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #7f5539; 
+}
+
+
+main {
+  margin-left: 200px;
+  width: calc(100% - 200px);
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.header {
+  background-image: url('PORTADA.jpeg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4); 
+  z-index: 1;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+}
+
+.header h1 {
+  font-family: 'Merriweather'; 
+  font-size: 8rem; 
+  color: #fefae0;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  font-size: 2rem;
+  color: #fefae0;
+  font-style: 'Merriweather';
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 300;
+}
+
+.intro-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: left;
+}
+
+.intro-text p {
+  font-family: 'Merriweather', serif;
+  font-size: 2rem;
+  line-height: 2.5;
+  color: #fefae0;
+  flex: 1;
+}
+
+.intro-text img {
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  border: 4px solid #7f5539;
+  box-shadow: 0px 0px 10px #000;
+}
+
+/* Secciones */
+section {
+  padding: 10px 10px;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.8;
+  border-bottom: 1px solid #2e2e2e;
+}
+
+/* Títulos y subtítulos */
+section h2 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, serif;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #cad2c5; 
+  border-bottom: 2px solid #7f5539;
+  padding-bottom: 10px;
+}
+
+section h3 {
+  font-size: 2rem;
+  color: #cad2c5;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+section p {
+  font-family: Georgia, 'Times New Roman', sans-serif;
+  text-align: justify;
+  font-size: 1rem;
+  color: #fefae0;
+}
+
+.gallery-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  gap: 15px; 
+  width: 100vw;
+  padding: 0; 
+  max-width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.gallery-images img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00000050;
+  object-fit: cover;
+}
+
+.gallery-images img:nth-child(1),
+.gallery-images img:nth-child(5) {
+  grid-column: 1 / -1;
+}
+
+
+#testimonios {
+  background-color: #5e4432;
+  padding: 3rem 2rem;
+  border-top: 15px solid #5e4432;
+  width: 100%; 
+  
+}
+
+#testimonios h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #FFFFFF;
+}
+
+.comentarios-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  width: 100%;
+  max-width: 100%; 
+  box-sizing: border-box;
+  overflow-x: auto; 
+}
+
+.comentario {
+  max-width: 45%; 
+  background-color: #6e4b3b;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #5e4432;
+  font-style: italic;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  flex-shrink: 0; 
+  transform: translateX(-15px); 
+}
+
+.comentario span {
+  display: block;
+  margin-top: 0.5rem;
+  text-align: right;
+  font-style: normal;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #5e4432;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+form button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #444;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #222;
+}
+
+#thank-you-message {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 500;
+}
+
+
+.family-tree {
+  background-color: #3e402f;
+  padding: 30px;
+  border-radius: 15px;
+  color: #fefae0;
+  border: 2px dashed #7f5539;
+  width: 100%;
+  box-sizing: border-box;
+}
+.arbol-img {
+  max-width: 80vw;
+  height: auto;
+  display: block;
+  margin-left: -20%;
+  margin-right: auto; 
+}
+
+.video {
+  text-align: center; 
+  margin-top: 20px;   
+}
+
+.video video {
+  max-width: 100%;      
+  height: auto;       
+  max-height: 600px;  
+}
+
